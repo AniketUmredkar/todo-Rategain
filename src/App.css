@@ -1,38 +1,192 @@
-.App {
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.app {
+  padding: 20px;
+  background-color: #fff;
+  position: relative;
+  font-family: "Mali", cursive;
+}
+
+.app-dark {
+  background-color: #333;
+}
+
+.theme-selector {
+  cursor: pointer;
+  font-size: 18px;
+  padding: 2px 5px;
+  font-family: "Mali", cursive;
+  border-radius: 20px;
+  position: absolute;
+  right: 100px;
+  top: 20px;
+}
+
+.theme-selector-dark {
+  border: 2px solid #fff;
+  background-color: #333;
+  color: #eee;
+}
+
+.heading-primary {
+  color: #f03e3e;
+  padding: 20px;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.heading-primary-dark {
+  color: #ff8787;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.container-list {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  justify-items: center;
+  column-gap: 5%;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.container-list-todo,
+.container-list-completed {
+  width: 80%;
+  height: fit-content;
+  border: 2px solid #5f3dc4;
+  border-radius: 50px;
+  padding: 10px 40px 40px 40px;
+}
+
+.container-list-todo-dark,
+.container-list-completed-dark {
+  border: 2px solid #9775fa;
+}
+
+.container-list-todo {
+  justify-self: end;
+}
+
+.container-list-completed {
+  justify-self: start;
+}
+
+.heading-secondary {
+  color: #5f3dc4;
+  text-align: center;
+  padding: 10px;
+}
+
+.heading-secondary-dark {
+  color: #9775fa;
+}
+
+.btn {
+  font-weight: 600;
+  font-family: "Mali", cursive;
+  font-size: 20px;
+  border: none;
+  background-color: #fff;
+  cursor: pointer;
+  padding: 2px 5px;
+}
+
+.btn-dark {
+  background-color: #333;
+}
+
+.btn-item {
+  color: #5f3dc4;
+}
+
+.btn-item-dark {
+  color: #9775fa;
+}
+
+.form-add {
+  width: 100%;
   display: flex;
-  flex-direction: column;
+}
+
+.btn-add {
+  margin-left: 10px;
+  color: #5f3dc4;
+}
+
+.btn-add-dark {
+  color: #9775fa;
+}
+
+.input-add {
+  color: #1864ab;
+  font-size: 18px;
+  font-weight: 500;
+  font-family: "Mali", cursive;
+  width: 80%;
+  padding: 5px 10px;
+  border-radius: 11px;
+  border: 2px solid #5f3dc4;
+}
+
+.input-add-dark {
+  border: 2px solid #9775fa;
+  background-color: #333;
+  color: #a5d8ff;
+}
+
+.task-name {
+  font-weight: 500;
+  color: #1864ab;
+  font-size: 18px;
+  width: 70%;
+}
+
+.task-name-dark {
+  color: #4dabf7;
+}
+
+.list-item::marker {
+  color: #1864ab;
+  font-weight: 500;
+}
+
+.list-item-dark::marker {
+  color: #4dabf7;
+}
+
+.container-list-item {
+  margin: 10px 0;
+  display: flex;
+  justify-content: space-between;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.btn-done,
+.btn-delete,
+.btn-todo {
+  font-size: 18px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.btn-done {
+  color: #2b8a3e;
+}
+
+.btn-done-dark {
+  color: #69db7c;
+}
+
+.btn-delete {
+  color: #f03e3e;
+}
+
+.btn-delete-dark {
+  color: #ff8787;
+}
+
+.btn-todo {
+  color: #5f3dc4;
+}
+
+.btn-todo-dark {
+  color: #9775fa;
 }
