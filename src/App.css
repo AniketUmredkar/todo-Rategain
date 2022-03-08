@@ -44,14 +44,14 @@
 
 .container-list {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 50% 50%;
   justify-items: center;
   column-gap: 5%;
 }
 
 .container-list-todo,
 .container-list-completed {
-  width: 80%;
+  max-width: 80%;
   height: fit-content;
   border: 2px solid #5f3dc4;
   border-radius: 50px;
@@ -139,6 +139,7 @@
   color: #1864ab;
   font-size: 18px;
   width: 70%;
+  overflow-wrap: break-word;
 }
 
 .task-name-dark {
