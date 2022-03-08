@@ -1,25 +1,22 @@
 import { useState, useEffect } from "react";
-import { v4 } from "uuid";
 import "./App.css";
-import CompletedTaskList from "./Components/CompletedList";
-import TaskList from "./Components/TaskList";
+import TaskListContainer from "./Components/TaskListContainer/TaskListContainer";
 
 function App() {
-  const [taskList, setTaskList] = useState([]);
-  const [display, setDisplay] = useState(true);
-  const [newTask, setNewTask] = useState("");
   const [theme, setTheme] = useState("light");
+  const [taskList, setTaskList] = useState([]);
 
+  async function getData() {
+    const response = await fetch(
+      "https://jsonplaceholder.typicode.com/users/1/todos"
+    );
+    const data = await response.json();
+    setTaskList([...data]);
+  }
   useEffect(() => {
-    async function getData() {
-      const response = await fetch(
-        "https://jsonplaceholder.typicode.com/users/1/todos"
-      );
-      const data = await response.json();
-      setTaskList([...data]);
-    }
     getData();
   }, []);
+
   return (
     <div className={theme === "light" ? "app" : "app app-dark"}>
       <select
@@ -45,102 +42,18 @@ function App() {
         To-do List
       </h1>
       <div className="container-list">
-        <div
-          className={
-            theme === "light"
-              ? "container-list-todo"
-              : "container-list-todo container-list-todo-dark"
-          }
-        >
-          <h2
-            className={
-              theme === "light"
-                ? "heading-secondary"
-                : "heading-secondary heading-secondary-dark"
-            }
-          >
-            Todo
-          </h2>
-          <TaskList
-            theme={theme}
-            taskList={taskList}
-            setTaskList={setTaskList}
-          ></TaskList>
-          <button
-            className={
-              theme === "light"
-                ? "btn btn-item"
-                : "btn btn-item btn-dark btn-item-dark"
-            }
-            style={display ? { display: "inline-block" } : { display: "none" }}
-            onClick={() => {
-              setDisplay(false);
-            }}
-          >
-            + Item
-          </button>
-          <form
-            className={
-              theme === "light" ? "form-add" : "form-add form-add-dark"
-            }
-            style={!display ? { display: "inline-block" } : { display: "none" }}
-          >
-            <input
-              className={
-                theme === "light" ? "input-add" : "input-add input-add-dark"
-              }
-              type="text"
-              placeholder="new task..."
-              value={newTask}
-              onChange={(e) => {
-                setNewTask(e.target.value);
-              }}
-            ></input>
-            <button
-              className={
-                theme === "light"
-                  ? "btn btn-add"
-                  : "btn btn-add btn-dark btn-add-dark"
-              }
-              type="submit"
-              onClick={(e) => {
-                e.preventDefault();
-                if (newTask !== "") {
-                  setTaskList([
-                    ...taskList,
-                    { userId: 1, id: v4(), title: newTask, completed: false },
-                  ]);
-                }
-                setNewTask("");
-                setDisplay(true);
-              }}
-            >
-              Add
-            </button>
-          </form>
-        </div>
-        <div
-          className={
-            theme === "light"
-              ? "container-list-completed"
-              : "container-list-completed container-list-completed-dark"
-          }
-        >
-          <h2
-            className={
-              theme === "light"
-                ? "heading-secondary"
-                : "heading-secondary heading-secondary-dark"
-            }
-          >
-            Done
-          </h2>
-          <CompletedTaskList
-            theme={theme}
-            taskList={taskList}
-            setTaskList={setTaskList}
-          ></CompletedTaskList>
-        </div>
+        <TaskListContainer
+          isTaskList={true}
+          taskList={taskList}
+          setTaskList={setTaskList}
+          theme={theme}
+        ></TaskListContainer>
+        <TaskListContainer
+          isTaskList={false}
+          taskList={taskList}
+          setTaskList={setTaskList}
+          theme={theme}
+        ></TaskListContainer>
       </div>
     </div>
   );

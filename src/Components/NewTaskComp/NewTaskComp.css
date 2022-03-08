@@ -1,0 +1,38 @@
+.btn-item {
+  color: #5f3dc4;
+}
+
+.btn-item-dark {
+  color: #9775fa;
+}
+
+.form-add {
+  width: 100%;
+  display: flex;
+}
+
+.btn-add {
+  margin-left: 10px;
+  color: #5f3dc4;
+}
+
+.btn-add-dark {
+  color: #9775fa;
+}
+
+.input-add {
+  color: #1864ab;
+  font-size: 18px;
+  font-weight: 500;
+  font-family: "Mali", cursive;
+  width: 80%;
+  padding: 5px 10px;
+  border-radius: 11px;
+  border: 2px solid #5f3dc4;
+}
+
+.input-add-dark {
+  border: 2px solid #9775fa;
+  background-color: #333;
+  color: #a5d8ff;
+}

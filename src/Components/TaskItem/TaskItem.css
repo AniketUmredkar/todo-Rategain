@@ -1,0 +1,57 @@
+.task-name {
+  font-weight: 500;
+  color: #1864ab;
+  font-size: 18px;
+  width: 70%;
+  overflow-wrap: break-word;
+}
+
+.task-name-dark {
+  color: #4dabf7;
+}
+
+.list-item::marker {
+  color: #1864ab;
+  font-weight: 500;
+}
+
+.list-item-dark::marker {
+  color: #4dabf7;
+}
+
+.container-list-item {
+  margin: 10px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.btn-done,
+.btn-delete,
+.btn-todo {
+  font-size: 18px;
+}
+
+.btn-done {
+  color: #2b8a3e;
+}
+
+.btn-done-dark {
+  color: #69db7c;
+}
+
+.btn-delete {
+  color: #f03e3e;
+}
+
+.btn-delete-dark {
+  color: #ff8787;
+}
+
+.btn-todo {
+  color: #5f3dc4;
+}
+
+.btn-todo-dark {
+  color: #9775fa;
+}

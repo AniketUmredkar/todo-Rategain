@@ -1,0 +1,39 @@
+.container-list-todo {
+  width: 50%;
+  height: fit-content;
+  border: 2px solid #5f3dc4;
+  border-radius: 50px;
+  padding: 10px 40px 40px 40px;
+}
+
+.container-list-todo-dark {
+  border: 2px solid #9775fa;
+}
+
+.container-list-todo {
+  justify-self: end;
+}
+
+.heading-secondary {
+  color: #5f3dc4;
+  text-align: center;
+  padding: 10px;
+}
+
+.heading-secondary-dark {
+  color: #9775fa;
+}
+
+.btn {
+  font-weight: 600;
+  font-family: "Mali", cursive;
+  font-size: 20px;
+  border: none;
+  background-color: #fff;
+  cursor: pointer;
+  padding: 2px 5px;
+}
+
+.btn-dark {
+  background-color: #333;
+}
